@@ -1,0 +1,53 @@
+<style scoped>
+	.container [contenteditable=true] {
+		-webkit-user-select: text;
+		user-select: text
+	}
+</style>
+<style>
+	.container [contenteditable]:after {
+		width: 8px;
+		height: 8px;
+		display: inline-block;
+		content: ' '
+	}
+
+	.container [contenteditable]:after {
+		content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiUlEQVQ4y2NgGFKgs7OTl2zNEyZMmAgEDZMmTeogWTNQUwVQcyeIDaLnz5/PQYrmssmTJ1sC6QQg7gXiFlI0l4I0Q9lOQNuLiNYMVFwCxFZQtiPQgEKSNAM1WMM0k2wzTDPQ+Q5AdjEpfs6CRRPJmqEGvAC6IAlId4NcQk58vwDih0DbMxhGDgAAx6ZVXMd4yEMAAAAASUVORK5CYII=)
+	}
+
+	.container [contenteditable]:focus:after {
+		width: 0;
+		content: ''
+	}
+</style>
+
+<div data-include="your-html"></div>
+
+<button data-terr='FR' class="button">FR</button>
+<button data-terr='DE' class="button">DE</button>
+<button data-terr='ES' class="button">ES</button>
+<button data-terr='PL' class="button">PL</button>
+
+
+<script type="text/javascript">
+	(function ($) {
+
+		$('button.button').click(function () {
+			var terr = $(this).attr('data-terr');
+			// console.log(data);
+			var includes = $('[data-include]');
+			jQuery.each(includes, function () {
+				var file = './views/translate/' + terr + '.html';
+				$(this).load(file);
+				var s = document.createElement("script");
+				s.type = "text/javascript";
+				s.src = "/js/translations-helper.js";
+				// Use any selector
+				$("body").append(s);
+			});
+
+		});
+
+	})(jQuery);
+</script>
