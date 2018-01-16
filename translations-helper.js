@@ -9,7 +9,7 @@ function downloadInnerHtml(filename, elId, mimeType) {
   link.setAttribute('href', 'data:' + mimeType + ';charset=utf-8,' + encodeURIComponent(elHtml));
   link.click();
 }
-var fileName = 'tags.html'; // You can use the .txt extension if you want
+var fileName = 'Rename_me.html'; // You can use the .txt extension if you want
 
 $('#downloadLink').click(function () {
   $("*[contenteditable='true']").each(function (ind, elem) {
@@ -22,11 +22,11 @@ $('#downloadLink').click(function () {
 
   if ($('#translators').length == 0) {
     //insert helper text
-    $("<style scoped>.container [contenteditable=true]{-webkit-user-select:text;user-select:text}</style><style>.container [contenteditable]:after{width:8px;height:8px;display:inline-block;content:' '}.container [contenteditable]:after{content:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiUlEQVQ4y2NgGFKgs7OTl2zNEyZMmAgEDZMmTeogWTNQUwVQcyeIDaLnz5/PQYrmssmTJ1sC6QQg7gXiFlI0l4I0Q9lOQNuLiNYMVFwCxFZQtiPQgEKSNAM1WMM0k2wzTDPQ+Q5AdjEpfs6CRRPJmqEGvAC6IAlId4NcQk58vwDih0DbMxhGDgAAx6ZVXMd4yEMAAAAASUVORK5CYII=)}.container [contenteditable]:focus:after{width:0;content:''}.title1{display:block!important;}</style >").insertBefore(".std");
-    $('<div id = "translators" > <h2 style="padding: 30px 0 10px;text-align:center;">Hi Translators!</h2> <h4 style="padding: 0 30px 10px;text-align:center;">Click on any text below to edit and insert your translations.</h4> <h4 style="padding: 0 30px 5px;text-align:center;text-transform:none;">To make it easier to edit, reduce your browser window width, all the rows will stack up nicely and stop moving around.</h4> <h4 style="padding: 0 30px 5px;text-align:center;text-transform:none;">To grab all text in one area, click  the text you want to edit, then press CTRL + A</h4> <h4 style="padding: 0 30px 5px;text-align:center;text-transform:none;">When your all done, hit the export button below and save as FR, DE, ES or whatever and send back over to us :)</h4> <a href="#" id="downloadLink"><button class="button" style="margin: 0 auto 30px;display: block;">Download the inner html</button></a></div >').insertBefore(".std");
+    $("<style scoped>.container [contenteditable=true]{-webkit-user-select:text;user-select:text}</style><style>.container [contenteditable]:after{width:8px;height:8px;display:inline-block;content:' '}.container [contenteditable]:after{content:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiUlEQVQ4y2NgGFKgs7OTl2zNEyZMmAgEDZMmTeogWTNQUwVQcyeIDaLnz5/PQYrmssmTJ1sC6QQg7gXiFlI0l4I0Q9lOQNuLiNYMVFwCxFZQtiPQgEKSNAM1WMM0k2wzTDPQ+Q5AdjEpfs6CRRPJmqEGvAC6IAlId4NcQk58vwDih0DbMxhGDgAAx6ZVXMd4yEMAAAAASUVORK5CYII=)}.container [contenteditable]:focus:after{width:0;content:''}svg{display:none!important}.title1{display:block!important;}</style >").insertBefore(".std");
+    $('<div id="translators" style="max-width:800px;margin: 0 auto 30px;"> <h2 style="padding: 30px 0 10px;text-align:center;">Hi Translators!</h2> <h4 style="padding: 0 30px 10px;text-align:center;">You can edit any text below that has the pencil icon next to it, just click and type.</h4><h5 style="padding: 0 30px 5px;text-align:center;text-transform:none;">Currently, the space bar is not recognised when editing text within a button, but you can copy & paste from some where else.</h5> <h5 style="padding: 0 30px 5px;text-align:center;text-transform:none;">To make it easier to edit, reduce your browser window width, all the rows will stack up nicely and stop moving around.</h5> <h4 style="padding: 0 30px 5px;text-align:center;text-transform:none;">To grab all text in one area, click  the text you want to edit, then press CTRL + A</h4> <h4 style="padding: 0 30px 5px;text-align:center;text-transform:none;">When your all done, hit the export button below and save as FR, DE, ES or whatever and send back over to the Adams :)</h4> <a href="#" id="downloadLink"><button class="button" style="margin: 0 auto 30px;display: block;">Download the inner html</button></a></div >').insertBefore(".std");
   }
   setTimeout(function () {
-      //make elements editbale
+      //make elements editable
       $('.container h1, .container h2, .container h3, .container h4, .container h5, .container h6, .container p, .container span, .container button.button, #homeSlider-nav a').attr('contenteditable', 'true');
       //stop clicks
       $('.container a').click(function (event) {
