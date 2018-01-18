@@ -1,33 +1,27 @@
-<style scoped>
-	.container [contenteditable=true] {
-		-webkit-user-select: text;
-		user-select: text
-	}
-</style>
 <style>
-	.container [contenteditable]:after {
-		width: 8px;
-		height: 8px;
-		display: inline-block;
-		content: ' '
+	.button-container {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+		padding: 25px;
+		margin: 0 auto;
+		max-width: 600px;
 	}
-
-	.container [contenteditable]:after {
-		content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiUlEQVQ4y2NgGFKgs7OTl2zNEyZMmAgEDZMmTeogWTNQUwVQcyeIDaLnz5/PQYrmssmTJ1sC6QQg7gXiFlI0l4I0Q9lOQNuLiNYMVFwCxFZQtiPQgEKSNAM1WMM0k2wzTDPQ+Q5AdjEpfs6CRRPJmqEGvAC6IAlId4NcQk58vwDih0DbMxhGDgAAx6ZVXMd4yEMAAAAASUVORK5CYII=)
-	}
-
-	.container [contenteditable]:focus:after {
-		width: 0;
-		content: ''
+	.button {
+		text-transform: none;
 	}
 </style>
 
 <div data-include="your-html"></div>
 
-<button data-terr='FR' class="button">FR</button>
-<button data-terr='DE' class="button">DE</button>
-<button data-terr='ES' class="button">ES</button>
-<button data-terr='PL' class="button">PL</button>
+<div class="button-container">
+	<button data-terr='FR' class="button">FR</button>
+	<button data-terr='DE' class="button">DE</button>
+	<button data-terr='ES' class="button">ES</button>
+	<button data-terr='PL' class="button">PL</button>
+</div>
+
 
 
 <script type="text/javascript">
